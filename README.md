@@ -7,8 +7,8 @@ Encurtador de URLs construído com Java 17 e serviços serverless da AWS. O proj
 ```mermaid
 flowchart LR
     client[Cliente] --> api[API Gateway HTTP]
-    api -->|POST /create| create[Lambda generateShortenerUrl]
-    api -->|GET /{urlCode}| redirect[Lambda RedirectUrlShotener]
+    api -->|"POST /create"| create[Lambda generateShortenerUrl]
+    api -->|"GET /{urlCode}"| redirect[Lambda RedirectUrlShotener]
     create -->|PutObject| bucket[(S3)]
     redirect -->|GetObject| bucket
 ```
