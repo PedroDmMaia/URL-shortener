@@ -1,0 +1,17 @@
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfplan
+terraform/terraform.tfvars
+terraform/.terraform.tfstate.lock.info
+
+# Maven
+CreateUrlLambda/target/
+RedirectUrlShotener/target/
+
+# IDE and local files
+.idea/
+*.iml
+.vscode/
+*.log

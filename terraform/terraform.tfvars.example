@@ -1,0 +1,2 @@
+aws_region        = "us-east-2"
+bucket_name_prefix = "url-shortener-storage"
