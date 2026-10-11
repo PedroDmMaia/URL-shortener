@@ -39,6 +39,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Build Lambda JARs for Terraform
+        run: |
+          mvn --batch-mode --no-transfer-progress -f CreateUrlLambda/pom.xml package -DskipTests
+          mvn --batch-mode --no-transfer-progress -f RedirectUrlShotener/pom.xml package -DskipTests
+
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v3
 
